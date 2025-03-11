@@ -30,7 +30,7 @@ async fn main() -> WebDriverResult<()> {
 
     let caps = DesiredCapabilities::chrome();
 
-    let driver = match WebDriver::new("http://localhost:4444", caps.clone()).await {
+    let driver = match WebDriver::new("http://localhost:4444/wd/hub", caps.clone()).await {
         Ok(driver) => driver,
         Err(_) => {
             if which("docker").is_err() {
